@@ -1,0 +1,18 @@
+{
+  "extends": ["stylelint-config-recommended"],
+  "rules": {
+    "declaration-property-unit-allowed-list": [
+      {
+        "/^animation/": ["s", "ms"],
+        "/^border/": ["px", "rem", "%"],
+        "/^!(border|animation)/": ["fr", "rem", "%", "deg"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  }
+}

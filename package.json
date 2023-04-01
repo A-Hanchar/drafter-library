@@ -1,0 +1,81 @@
+{
+  "name": "simpler-library",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host",
+    "lint": "npm run lint:styles && npm run lint:scripts",
+    "lint:fix": "npm run lint:scripts:fix && npm run lint:styles:fix",
+    "lint:scripts": "eslint --ext .ts,.tsx src",
+    "lint:scripts:fix": "npm run lint:scripts -- --fix",
+    "lint:styles": "stylelint \"src/**/*.css\"",
+    "lint:styles:fix": "npm run lint:styles -- --fix",
+    "test": "vitest",
+    "test:cov": "vitest run --coverage",
+    "prepare": "husky install"
+  },
+  "authors": [
+    {
+      "name": "Artsiom Hanchar",
+      "email": "artsiom.hanchar@gmail.com",
+      "url": "https://github.com/A-Hanchar"
+    },
+    {
+      "name": "Vitaly Kovalev",
+      "email": "kovalevvtl@gmail.com",
+      "url": "https://github.com/sohodoll"
+    }
+  ],
+  "dependencies": {
+    "@testing-library/dom": "^9.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-c8": "^0.29.8",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "jsdom": "^21.1.1",
+    "lint-staged": "^13.2.0",
+    "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^11.2.2",
+    "postcss-pxtorem": "^6.0.0",
+    "prettier": "^2.8.7",
+    "stylelint": "^15.3.0",
+    "stylelint-config-recommended": "^11.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vite-plugin-tsc-watch": "^2.0.1",
+    "vitest": "^0.29.8"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --ext .ts,.tsx src --fix"
+    ],
+    "*.css": [
+      "prettier --write",
+      "stylelint \"src/**/*.css\" --fix"
+    ],
+    "*.{json,cjs,md,html}": [
+      "prettier --write"
+    ]
+  }
+}

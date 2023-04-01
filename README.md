@@ -1,2 +1,0 @@
-# Simpler-Library
-Simpler Library
