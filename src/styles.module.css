@@ -1,0 +1,11 @@
+.app {
+  background-color: yellow;
+
+  & .app-2 {
+    color: green;
+  }
+}
+
+:global(.myRule) {
+  font-family: cursive;
+}

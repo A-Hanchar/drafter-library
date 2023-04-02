@@ -29,7 +29,10 @@ module.exports = {
     'arrow-body-style': ['error', 'as-needed'],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+    'dot-notation': 'off',
+    '@typescript-eslint/dot-notation': 'error',
     'import/prefer-default-export': 'off',
+    'import/no-unused-modules': 'off',
     'import/order': [
       'error',
       {
@@ -41,7 +44,9 @@ module.exports = {
             position: 'after',
           },
         ],
-        alphabetize: { order: 'asc' },
+        alphabetize: {
+          order: 'asc',
+        },
         'newlines-between': 'always-and-inside-groups',
       },
     ],
@@ -49,9 +54,18 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: true, optionalDependencies: false, peerDependencies: false },
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
     ],
-    'import/namespace': ['warn', { allowComputed: true }],
+    'import/namespace': [
+      'warn',
+      {
+        allowComputed: true,
+      },
+    ],
     'prettier/prettier': [
       'error',
       {
