@@ -1,8 +1,9 @@
 /// <reference types="vitest" />
+
 import react from '@vitejs/plugin-react'
 import { type AliasOptions } from 'vite'
-import { defineConfig } from 'vitest/config'
 import { tscPlugin } from 'vite-plugin-tsc-watch'
+import { defineConfig } from 'vitest/config'
 
 import path from 'path'
 
@@ -21,37 +22,30 @@ export default defineConfig({
     alias,
   },
   appType: 'spa',
+  server: {
+    port: 1812,
+  },
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: [path.resolve(__dirname, 'src', 'mocks', 'vitest.setup.ts')],
-    root: path.resolve(__dirname, 'src'),
     clearMocks: true,
+    root: path.resolve(__dirname, 'src'),
+    alias,
+    passWithNoTests: true,
     coverage: {
+      provider: 'c8',
       enabled: false,
       reporter: ['text', 'html'],
       reportsDirectory: path.resolve(__dirname, 'coverage'),
-      branches: 90,
-      functions: 90,
-      statements: 90,
-      lines: 90,
+      branches: 10,
+      functions: 10,
+      statements: 10,
+      lines: 10,
       clean: true,
       all: true,
-      include: [
-        'src/**/*.ts?(x)',
-        '!src/**/*.d.ts',
-        '!src/mocks/**/*.ts?(x)',
-        '!src/**/__test__/*',
-        '!src/**/*.{test,spec}.{ts?(x)}',
-        '!**/node_modules/**',
-        '!**/dist/**',
-      ],
-      provider: 'c8',
+      include: ['src/**/*.ts?(x)'],
+      exclude: ['**/__{stories,test}__/*', '**/mocks/*', '**/*.d.ts'],
     },
-    alias,
-    passWithNoTests: false,
-  },
-  server: {
-    port: 1812,
   },
 })

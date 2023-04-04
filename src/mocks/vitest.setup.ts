@@ -1,7 +1,6 @@
-import { configure } from '@testing-library/dom'
-
+import { configure } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 configure({
-  testIdAttribute: 'data-simpler',
+  testIdAttribute: 'data-simpler-id',
 })

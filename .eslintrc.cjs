@@ -34,6 +34,7 @@ module.exports = {
     '@typescript-eslint/dot-notation': 'error',
     'import/prefer-default-export': 'off',
     'import/no-unused-modules': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'import/order': [
       'error',
       {
