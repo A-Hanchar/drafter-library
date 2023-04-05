@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 import { type AliasOptions } from 'vite'
 import { tscPlugin } from 'vite-plugin-tsc-watch'
 import { defineConfig } from 'vitest/config'
+import dts from 'vite-plugin-dts'
 
 import path from 'path'
 
@@ -17,7 +18,13 @@ const alias: AliasOptions = getAlias(['atoms', 'molecules', 'cells', 'organisms'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tscPlugin()],
+  plugins: [
+    react(),
+    tscPlugin(),
+    dts({
+      insertTypesEntry: true,
+    }),
+  ],
   resolve: {
     alias,
   },
@@ -46,6 +53,23 @@ export default defineConfig({
       all: true,
       include: ['src/**/*.ts?(x)'],
       exclude: ['**/__{stories,test}__/*', '**/mocks/*', '**/*.d.ts'],
+    },
+  },
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src', 'index.ts'),
+      name: 'simpler-library',
+      formats: ['es', 'umd'],
+      fileName: (format) => `simpler-library.${format}.js`,
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
     },
   },
 })
