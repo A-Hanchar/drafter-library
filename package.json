@@ -18,7 +18,6 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
     "preview": "vite preview --host",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "lint:fix": "npm run lint:scripts:fix && npm run lint:styles:fix",
