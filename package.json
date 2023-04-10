@@ -1,6 +1,6 @@
 {
   "name": "simpler-library",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "type": "module",
   "main": "./dist/simpler-library.umd.cjs",
   "module": "./dist/simpler-library.es.js",
