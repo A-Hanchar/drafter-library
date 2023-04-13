@@ -58,9 +58,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src', 'index.ts'),
-      name: 'simpler-library',
+      name: 'drafter-library',
       formats: ['es', 'umd'],
-      fileName: (format) => `simpler-library.${format}.js`,
+      fileName: (format) => `drafter-library.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

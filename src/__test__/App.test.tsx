@@ -9,6 +9,6 @@ describe('App', () => {
 
     screen.debug()
 
-    expect(screen.getByTestId('simplerText').textContent).toBe('"Simpler Lib"')
+    expect(screen.getByTestId('drafterText').textContent).toBe('"Drafter Library"')
   })
 })
