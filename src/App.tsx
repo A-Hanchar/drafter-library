@@ -8,9 +8,9 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
-      <p data-simpler-id="simplerText">"Simpler Lib"</p>
+      <p data-drafter-id="drafterText">"Drafter Library"</p>
       <Text
-        text="Simpler Lib Mock Text"
+        text="Drafter Library Mock Text"
         color="black"
       />
 

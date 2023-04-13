@@ -1,14 +1,14 @@
 {
-  "name": "simpler-library",
+  "name": "drafter-library",
   "version": "1.0.9",
   "type": "module",
-  "main": "./dist/simpler-library.umd.cjs",
-  "module": "./dist/simpler-library.es.js",
+  "main": "./dist/drafter-library.umd.cjs",
+  "module": "./dist/drafter-library.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/simpler-library.es.js",
-      "require": "./dist/simpler-library.umd.cjs"
+      "import": "./dist/drafter-library.es.js",
+      "require": "./dist/drafter-library.umd.cjs"
     }
   },
   "files": [

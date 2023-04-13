@@ -29,3 +29,6 @@ coverage
 
 # Ignore specific env files
 .env
+
+# Ignore storybook-static (build folder for storybook)
+storybook-static
