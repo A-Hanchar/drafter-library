@@ -16,9 +16,9 @@
   ],
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 watch-css -s ./src",
     "build": "tsc && vite build",
-    "preview": "vite preview --host",
+    "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "lint:fix": "npm run lint:scripts:fix && npm run lint:styles:fix",
     "lint:scripts": "eslint --ext .ts,.tsx src",
@@ -27,9 +27,7 @@
     "lint:styles:fix": "npm run lint:styles -- --fix",
     "test": "vitest",
     "test:cov": "vitest run --coverage",
-    "prepare": "husky install",
-    "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook"
+    "prepare": "husky install"
   },
   "authors": [
     {
@@ -108,5 +106,9 @@
     "*.{json,cjs,md,html}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "@fontsource/baloo-thambi-2": "^4.5.12",
+    "modern-css-reset": "^1.4.0"
   }
 }
