@@ -1,5 +1,6 @@
 {
-  "extends": ["stylelint-config-recommended"],
+  "extends": ["stylelint-config-recommended", "stylelint-config-standard", "stylelint-config-recess-order"],
+  "plugins": ["stylelint-order"],
   "rules": {
     "declaration-property-unit-allowed-list": [
       {
@@ -13,6 +14,9 @@
       {
         "ignorePseudoClasses": ["global"]
       }
-    ]
+    ],
+    "at-rule-no-unknown": [true, { "ignoreAtRules": ["each"] }],
+    "custom-property-pattern": null,
+    "declaration-block-no-duplicate-properties": true
   }
 }

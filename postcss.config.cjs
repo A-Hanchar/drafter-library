@@ -4,5 +4,6 @@ module.exports = {
     'postcss-nesting': {},
     'postcss-pxtorem': {},
     autoprefixer: {},
+    'postcss-each': {},
   },
 }
