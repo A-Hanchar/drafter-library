@@ -14,7 +14,7 @@ const getAlias = (aliases: string[]): AliasOptions =>
     replacement: path.resolve(__dirname, 'src', alias),
   }))
 
-const alias: AliasOptions = getAlias(['atoms', 'molecules', 'cells', 'organisms', 'mocks'])
+const alias: AliasOptions = getAlias(['atoms', 'molecules', 'cells', 'organisms', 'mocks', 'types', 'helpers'])
 
 // https://vitejs.dev/config/
 export default defineConfig({
