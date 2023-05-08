@@ -52,7 +52,13 @@ export default defineConfig({
       clean: true,
       all: true,
       include: ['src/**/*.ts?(x)'],
-      exclude: ['**/__{stories,test}__/*', '**/mocks/*', '**/*.d.ts'],
+      exclude: ['**/__{stories,tests}__/*', '**/mocks/*', '**/*.d.ts'],
+      collectCoverageFrom: ['src/**/*.tsx', 'src/**/*.ts'],
+    },
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped',
+      },
     },
   },
   build: {

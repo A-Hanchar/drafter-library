@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 
 import { TextProps, TextTag } from './types'
 
-export const Text = <T extends TextTag>({
+export const Text = <T extends TextTag = TextTag>({
   drafterId,
   as,
   className,

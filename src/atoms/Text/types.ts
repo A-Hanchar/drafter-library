@@ -8,7 +8,7 @@ export type TextTag = keyof Pick<
 
 export type TextSize = '30px' | '24px' | '21px' | '18px' | '16px' | '14px' | '12px' | '10px'
 
-export type TextProps<T extends TextTag> = PropsWithChildren<{
+export type TextProps<T extends TextTag = TextTag> = PropsWithChildren<{
   drafterId: string
   as: T
   className?: string
