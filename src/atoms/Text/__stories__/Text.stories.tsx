@@ -12,8 +12,7 @@ export default {
     as: 'p',
     children: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
   },
-  tags: ['autodocs'],
-} as Meta<typeof Text>
+} satisfies Meta<typeof Text>
 
 type TextStory = StoryObj<typeof Text>
 

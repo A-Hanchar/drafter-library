@@ -30,8 +30,6 @@ describe('<Text />', () => {
   })
 
   describe('check tag name', () => {
-    it('SHOULD render correct tag')
-
     it.each<{ tag: TextTag }>([{ tag: 'h1' }, { tag: 'p' }, { tag: 'span' }, { tag: 'sub' }])(
       'SHOULD render correct tag - $tag',
       ({ tag }) => {
