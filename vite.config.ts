@@ -14,7 +14,7 @@ const getAlias = (aliases: string[]): AliasOptions =>
     replacement: path.resolve(__dirname, 'src', alias),
   }))
 
-const alias: AliasOptions = getAlias(['atoms', 'molecules', 'cells', 'organisms', 'mocks'])
+const alias: AliasOptions = getAlias(['atoms', 'molecules', 'cells', 'organisms', 'mocks', 'types', 'helpers'])
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -52,7 +52,13 @@ export default defineConfig({
       clean: true,
       all: true,
       include: ['src/**/*.ts?(x)'],
-      exclude: ['**/__{stories,test}__/*', '**/mocks/*', '**/*.d.ts'],
+      exclude: ['**/__{stories,tests}__/*', '**/mocks/*', '**/*.d.ts'],
+      collectCoverageFrom: ['src/**/*.tsx', 'src/**/*.ts'],
+    },
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped',
+      },
     },
   },
   build: {

@@ -1,6 +1,8 @@
+import { Meta, StoryObj } from '@storybook/react'
+
 import { ColorGroup } from './ColorGroup'
 
-export const Colors = () => (
+const Colors = () => (
   <>
     <ColorGroup
       title="Core"
@@ -66,4 +68,8 @@ export const Colors = () => (
 export default {
   title: 'Atoms/Colors',
   component: Colors,
-}
+} as Meta<typeof Colors>
+
+type ColorStory = StoryObj<typeof Colors>
+
+export const Basic: ColorStory = {}

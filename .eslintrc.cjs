@@ -28,6 +28,8 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true, peerDependencies: false }],
+    '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     'arrow-body-style': ['error', 'as-needed'],
     'no-unused-vars': 'off',
