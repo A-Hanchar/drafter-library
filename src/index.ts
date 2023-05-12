@@ -4,3 +4,4 @@ import './core.css'
 import 'atoms/Color'
 
 export { Text } from 'atoms/Text'
+export * from 'hooks'
