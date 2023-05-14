@@ -1,3 +1,5 @@
 export { useCombinedRef } from './useCombinedRef'
 export { useLatest } from './useLatest'
 export { usePrevious } from './usePrevious'
+export { useIsMounted } from './useIsMounted'
+export { useSafeState } from './useSafeState'
